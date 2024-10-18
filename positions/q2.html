@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            text-align: center;
+
+        }
+
+        #elemento1 {
+            background-color: #c8ff00;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        #elemento2 {
+            background-color: #008cff;
+            top: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        #elemento3 {
+            background-color: #b9530f;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        #elemento4 {
+            background-color: #ff0095;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .box-centro {
+            background-color: #00ffd5;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="elemento1">box 1 na esquerda</div>
+    <div class="box" id="elemento2">box 2 na direita</div>
+    <div class="box" id="elemento3">box 3 na esquerda</div>
+    <div class="box" id="elemento4">box 4 na direita</div>
+    <div class="box-centro">box do centro</div>
+</body>
+
+</html>
