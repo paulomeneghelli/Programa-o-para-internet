@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jogos</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(0, 0, 0);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .container {
+            width: 300px;
+            background-color: #f7dfbc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .jogo {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .foto img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .infos {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nome {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .categoria {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jogo">
+            <div class="foto">
+                <img src="mario.jfif" alt="mario">
+            </div>
+            <div class="infos">
+                <div class="nome">Mario Cart</div>
+                <div class="categoria">corrida</div>
+            </div>
+        </div>
+
+        <div class="jogo">
+            <div class="foto">
+                <img src="fortnite.jfif" alt="fortnite">
+            </div>
+            <div class="infos">
+                <div class="nome">Fortnite</div>
+                <div class="categoria">Jogo de FPS</div>
+            </div>
+        </div>
+
+        <div class="jogo">
+            <div class="foto">
+                <img src="valorant.jfif" alt="valorant">
+            </div>
+            <div class="infos">
+                <div class="nome">Valorant</div>
+                <div class="categoria">Jogo de FPS com poder</div>
+            </div>
+        </div>
+
+        <div class="jogo">
+            <div class="foto">
+                <img src="freefire.jfif" alt="free fire">
+            </div>
+            <div class="infos">
+                <div class="nome">Free fire</div>
+                <div class="categoria">Jogo de FPS pelo celular</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
