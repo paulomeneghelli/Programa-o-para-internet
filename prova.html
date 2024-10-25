@@ -1,0 +1,169 @@
+<!-- 1 Explique o que ocorre em um acesso a uma página na web, descreva todas etapas e protocolos envolvidos até a carga completa do site.
+ resposta:
+Quando você quer ver uma página na internet, primeiro digita o endereço no navegador. Aí, o navegador pergunta a um serviço chamado DNS onde encontrar essa página, que é traduzida em um número IP.
+Depois, ele se conecta ao servidor do site usando um protocolo que garante que tudo funcione bem. Então, o navegador pede as informações da página, tipo texto, imagens e estilos.
+Quando o servidor responde, o navegador começa a montar tudo. Ele organiza o conteúdo, aplica os estilos e faz o site ficar interativo. Às vezes, ele precisa buscar mais imagens ou vídeos, mas faz isso rapidinho.
+  
+  
+  2 incorreto, pois html nao é uma linguagem de programação  mas ele é uma linguagem de marcação  e o css uma linguagem de estilo ultilizada pra definir a aparencia e o layout 
+
+  3 a) ultilizar o inline,interno e o externo 
+  inline: o estilo sera aplicado diretamente dentro da tag html
+  interno: definido dentro da tag "head" do documento html logo dentro de uma tag "Style "
+  externo: definido em um arquivo separado com extenção  .css que é vinculado ao documento html atraves da tag "link" 
+
+  b)
+  sao padroes que permitem indentificar elementos html especificos para aplicar os estilos 
+  ex: seletor por id e por classe
+
+
+c)
+ele é controlado principalmente pelo css 
+ex: grid ,flex . 
+
+
+
+
+
+    QUESTÂO 4 ABAIXO:   -->
+
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bandeiras da questão 4 </title>
+        <style>
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px;
+                min-height: 100vh;
+                justify-content: left; 
+                align-items:center;        
+            }
+    
+            .box {
+                width: 300px;
+                height: 200px;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.20s ease;
+            }
+    
+            @media (max-width: 500px){
+                .container{
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+    
+            .box:hover {
+                transform: scale(1.8);
+                width: 300px;                                                                                                                                                      
+                height: 320px;
+            }
+    
+            #Italia {
+                padding: 20px;
+                display: flex;
+                grid-gap: 20px;
+                
+            }                                                                 
+    
+            .verdei {
+                background-color: rgb(9, 165, 9);
+                width: 90px;
+                height: 225px;
+            }
+            .brancoi {
+                background-color: white;
+                width: 90px;
+                height: 225px;
+            }
+    
+            .vermelhoi {
+                background-color: rgb(225, 0, 0);
+                width: 90px;
+                height: 225px;
+            }
+            
+    
+            #Franca {
+                padding: 100px;
+            }
+    
+            .vermelhof {
+                background-color: rgb(217, 5, 5);
+                width: 300px;
+                height: 75px;
+            }
+    
+            .brancof {
+                background-color: white;
+                width: 300px;
+                height: 75px;
+            }
+    
+            .azulf {
+                background-color: rgb(4, 4, 156);
+                width: 300px;
+                height: 75px;
+            }
+    
+            #Japão {
+                padding: 10px;
+                display: flex;
+                
+            }
+    
+            .crancoJ {
+                background-color: white;
+                width: 300px;
+                height: 225px;
+                border: 1px solid black;
+            }
+    
+            .circuloj {
+                width: 110px;
+                height: 110px;
+                margin: 60px auto 20px auto;
+                background-color: rgb(218, 8, 8);
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="box" id="Italia">
+                <div class="verdei"></div>
+                <div class="brancoi"></div>
+                <div class="vermelhoi"></div>
+
+
+            </div>
+
+
+            <div class="box" id="Franca">
+                <div class="vermelhof"></div>
+                <div class="brancof"></div>
+                <div class="azulf"></div>
+
+            </div>
+
+
+            <div class="box" id="Japão">
+                <div class="brancoJ">
+                    <div class="circuloj"></div>
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    
+    </body>
+    
+    </html>
