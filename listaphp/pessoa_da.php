@@ -32,5 +32,5 @@ function recupera_lista_usuarios(){
     var_dump($resultado);
 }
 
-recupera_lista_usuarios();
+
 ?>
