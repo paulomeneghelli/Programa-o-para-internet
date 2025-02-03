@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cor Aleatória</title>
+</head>
+<body>
+
+    <script>
+        function trocarCor() {
+            let vermelho = Math.floor(Math.random() * 256);
+            let verde = Math.floor(Math.random() * 256);
+            let azul = Math.floor(Math.random() * 256);
+            return `rgb(${vermelho}, ${verde}, ${azul})`;
+        }
+
+        window.addEventListener("keydown", function(event) {
+            if (event.code === "Space") {  // Verifica se a tecla pressionada foi a de espaço
+                document.body.style.backgroundColor = trocarCor();
+            }
+        });
+    </script>
+</body>
+</html>

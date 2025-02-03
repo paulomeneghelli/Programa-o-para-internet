@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15</title>
+
+    <style>
+        #box{
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;
+            min-height: 100vh;
+        
+        }
+        #button{
+            min-height: 50px;
+            
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <label for="" id="lmin">numero minimo: </label>
+        <input type="text" id="min">
+        <label for="" id="lmax">numero maximo</label>
+        <input type="text" id="max">
+        <label for="" id="numA"></label>
+        <button id="button" onclick="sortear()">Sortear</button>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        function sortear(){
+            let nMin = parseFloat(document.getElementById("min").value);
+            let nMax = parseFloat(document.getElementById("max").value);
+            let result = Math.round(Math.random()*(nMax-nMin)+nMin);
+            document.getElementById("resultado").innerText =result;        
+        }
+    </script>
+</body>
+</html>

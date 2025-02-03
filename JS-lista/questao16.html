@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cor aleatoria</title>
+    <style>
+        button{
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;
+            min-height: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="button"> 
+        <button onclick="mudar()">Trocar a cor</button>
+    </div>
+   
+
+    <script>
+        function trocarCor() {
+            let vermelho = Math.floor(Math.random() * 256);
+            let verde = Math.floor(Math.random() * 256);
+            let azul = Math.floor(Math.random() * 256);
+            return `rgb(${vermelho}, ${verde}, ${azul})`;
+        }
+
+        function mudar() {
+            document.body.style.backgroundColor = trocarCor();
+        }
+    </script>
+</body>
+</html>
