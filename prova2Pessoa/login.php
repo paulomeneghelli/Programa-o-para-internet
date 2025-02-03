@@ -10,9 +10,9 @@
 <body>
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if ($_POST['username'] === 'cami' && $_POST['password'] === '123') {
+        if ($_POST['username'] === 'paulo' && $_POST['password'] === 'paulo') {
             $_SESSION['logged_in'] = true;
-            header('Location: index.php');
+            header('Location: listar.php');
         } else {
             echo "Login inválido!";
         }
@@ -25,3 +25,4 @@
     </form>
 </body>
 </html>
+  
