@@ -1,46 +1,14 @@
 <?php
-require_once 'Pessoa.php';
+include_once("crudPaulo.php");
+include_once("Pessoa.php");
 
-class PessoaController
-{
-    private $model;
-
-    public function __construct($db)
-    {
-        $this->model = new Pessoa($db);
-    }
-
-    public function index()
-    {
-        $pessoas = $this->model->listar();
-        require 'listar.php';
-    }
-
-    public function criar()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->model->criar($_POST);
-            header('Location: index.php');
-        } else {
-            require 'incluir.php';
-        }
-    }
-
-    public function editar($id)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_POST['id'] = $id;
-            $this->model->editar($_POST);
-            header('Location: index.php');
-        } else {
-            $pessoa = $this->model->buscar($id);
-            require 'editar.php';
-        }
-    }
-
-    public function excluir($id)
-    {
-        $this->model->excluir($id);
-        header('Location: index.php');
-    }
+if(isset($_POST["nome"]) && isset($_POST["email"])&& isset($_POST["telefone"])){
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $telefone = $_POST["telefone"];
+    insere_usuarios($nome, $email,$telefone);
+} else{
+    echo "Erro ao inserir usuários, informe todos os dados";
 }
+
+?>

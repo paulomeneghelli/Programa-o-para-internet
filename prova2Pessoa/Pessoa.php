@@ -1,44 +1,34 @@
 <?php
-class Pessoa
+
+include_once("crudPaulo.php");
+/* Função que recebe nome,email e telefone e insere usuarios no banco de dados */
+
+function insere_usuarios($nome, $email, $telefone)
 {
-    private $conn;
+    $dbname = conectDb();
+    $sql = "INSERT INTO usuario (nome, email,telefone) VALUES (?, ?, ?)";
+    $stmt = $dbname->prepare($sql);
+    $stmt->bindValue(1, $nome, PDO::PARAM_STR);
+    $stmt->bindValue(2, $email, PDO::PARAM_STR);
 
-    public function __construct($db)
-    {
-        $this->conn = $db;
-    }
-
-    public function listar()
-    {
-        $stmt = $this->conn->prepare("SELECT * FROM pessoas");
+    try{
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo "Usuáios inserido com sucesso!";
+    } catch (PODException $e){
+        echo "Erro ao inserir usuário: " . $e->getMessage();
     }
 
-    public function buscar($id)
-    {
-        $stmt = $this->conn->prepare("SELECT * FROM pessoas WHERE id = :id");
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-
-    public function criar($dados)
-    {
-        $stmt = $this->conn->prepare("INSERT INTO pessoas (nome, email, telefone) VALUES (:nome, :email, :telefone)");
-        return $stmt->execute($dados);
-    }
-
-    public function editar($dados)
-    {
-        $stmt = $this->conn->prepare("UPDATE pessoas SET nome = :nome, email = :email, telefone = :telefone WHERE id = :id");
-        return $stmt->execute($dados);
-    }
-
-    public function excluir($id)
-    {
-        $stmt = $this->conn->prepare("DELETE FROM pessoas WHERE id = :id");
-        $stmt->bindParam(':id', $id);
-        return $stmt->execute();
-    }
+    $dbname = null;
 }
+
+/* função retorna */
+function recupera_lista_usuarios(){
+    $dbname = connectaBd();
+    $sql = "SELECT * FROM usuarios";
+    $stmt = $dbname->prepare($sql);
+    $stmt->execute();
+    $resultado = $stmt->fetchAll(PDO::FECTH_ASSOC);
+    var_dump($resultado);
+}
+
+?>
