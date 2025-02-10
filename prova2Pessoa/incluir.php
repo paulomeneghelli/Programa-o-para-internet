@@ -25,10 +25,7 @@ $pessoas = [];
                 <td><?= htmlspecialchars($pessoa['nome']) ?></td>
                 <td><?= htmlspecialchars($pessoa['email']) ?></td>
                 <td><?= htmlspecialchars($pessoa['telefone']) ?></td>
-                <td>
-                    <a id="editar" href="index.php?action=editar&id=<?= $pessoa['id'] ?>">Editar</a>
-                    <a id="excluir" href="index.php?action=excluir&id=<?= $pessoa['id'] ?>">Excluir</a>
-                </td>
+                
             </tr>
         <?php endforeach; ?>
     </table>
